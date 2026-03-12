@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Faculty Alliance | Elite Batch – Physics Class 12 | JEE/NEET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a2332;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.15);
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --success: #22c55e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      user-select: text;
+      -webkit-user-select: text;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Header & Logo */
+    header {
+      padding: 1.5rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .logo-wrap img {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    /* Sections */
+    section {
+      padding: 2rem 0;
+    }
+
+    section h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .hero .teacher {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero .batch-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .hero .batch-info span {
+      background: var(--card);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      font-weight: 700;
+      color: #fff;
+      background: var(--card);
+      min-width: 220px;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      border-color: transparent;
+    }
+
+    .btn:hover {
+      filter: brightness(1.08);
+    }
+
+    /* Highlights */
+    .highlights {
+      list-style: none;
+    }
+
+    .highlights li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .highlights li:last-child {
+      border-bottom: none;
+    }
+
+    .highlights li::before {
+      content: "✓";
+      color: var(--success);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Fees */
+    .fees-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .fee-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .fee-card .label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .fee-card .amount {
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .fee-card .note {
+      width: 100%;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* QR */
+    .qr-section {
+      text-align: center;
+    }
+
+    .qr-section img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      margin: 0.5rem 0 0.75rem;
+    }
+
+    .qr-section p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Modal (QR popup) */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 999;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal {
+      width: min(520px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      position: relative;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .modal h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .modal .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .modal .modal-close:hover {
+      filter: brightness(1.12);
+    }
+
+    /* Email link */
+    a.email-link {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    a.email-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Forms */
+    .form-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-status {
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .form-status.ok {
+      color: #a7f3d0;
+    }
+
+    .form-status.err {
+      color: #fecaca;
+    }
+
+    .form-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 0.25rem;
+    }
+
+    button[type="submit"]:hover {
+      filter: brightness(1.1);
+    }
+
+    /* Contact */
+    .contact-block {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .contact-block a {
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .logo-wrap img {
+        height: 48px;
+      }
+      .brand-name {
+        font-size: 1.15rem;
+      }
+      .hero h1 {
+        font-size: 1.45rem;
+      }
+      .fee-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn {
+        width: 100%;
+        min-width: unset;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo-wrap">
+        <img src="https://i.ibb.co/7xZv0Ldd/logo.png" alt="Prime Faculty Alliance logo" width="56" height="56">
+        <span class="brand-name">Prime Faculty Alliance</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="badge">Class 12 · JEE / NEET</span>
+        <h1>Elite Batch – Physics</h1>
+        <p class="teacher">By Parvesh Sir</p>
+        <div class="batch-info">
+          <span>📅 Starts 16th March</span>
+          <span>🕐 8:30 PM – 10:00 PM</span>
+          <span>🎯 Only 15 seats</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn primary" href="#registration">Register now</a>
+          <a class="btn" href="#pay" id="open-qr">Pay fees (QR)</a>
+        </div>
+        <p>
+          <a href="mailto:primefacultyalliance959@gmail.com" class="email-link">primefacultyalliance959@gmail.com</a>
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Course highlights</h2>
+        <ul class="highlights">
+          <li>JEE/NEET level classes</li>
+          <li>Board important questions</li>
+          <li>Handwritten notes and study material</li>
+          <li>Weekly tests</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Fee structure</h2>
+        <div class="fees-grid">
+          <div class="fee-card">
+            <div>
+              <div class="label">Admission fee (one-time)</div>
+              <div class="amount">₹299</div>
+            </div>
+            <span class="note">Pay once at registration.</span>
+          </div>
+          <div class="fee-card">
+            <div>
+              <div class="label">Monthly fee</div>
+              <div class="amount">₹999 / month</div>
+            </div>
+            <span class="note">After admission, pay per month.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pay">
+      <div class="container">
+        <h2>Fee payment</h2>
+        <p style="color: var(--text-muted); text-align: center; margin-top: -0.25rem;">
+          Click the button in the top section to open the QR code.
+        </p>
+      </div>
+    </section>
+
+    <section id="registration">
+      <div class="container">
+        <h2>Student registration</h2>
+        <div class="form-box">
+          <form id="registration-form" method="POST">
+            <input type="hidden" name="form_type" value="Student Registration">
+            <input type="hidden" name="_subject" value="Elite Batch – New registration">
+            <input type="hidden" name="_template" value="table">
+            <div class="form-group">
+              <label for="reg-name">Student name *</label>
+              <input type="text" id="reg-name" name="name" required placeholder="Full name">
+            </div>
+            <div class="form-group">
+              <label for="reg-phone">Phone number *</label>
+              <input type="tel" id="reg-phone" name="phone" required placeholder="10-digit number" inputmode="numeric" autocomplete="tel" pattern="[0-9]{10}">
+            </div>
+            <div class="form-group">
+              <label for="reg-father">Father's name *</label>
+              <input type="text" id="reg-father" name="father" required placeholder="Father's full name">
+            </div>
+            <div class="form-group">
+              <label for="reg-place">Place / City *</label>
+              <input type="text" id="reg-place" name="place" required placeholder="City or town">
+            </div>
+            <div class="form-group">
+              <label for="reg-email">Email (optional)</label>
+              <input type="email" id="reg-email" name="email" placeholder="your@email.com">
+            </div>
+            <button type="submit">Send registration via email</button>
+            <div class="form-status" id="registration-status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <h2>Submit a doubt</h2>
+        <div class="form-box">
+          <form id="doubts-form" method="POST">
+            <input type="hidden" name="form_type" value="Doubt">
+            <input type="hidden" name="_subject" value="Elite Batch – New doubt">
+            <input type="hidden" name="_template" value="table">
+            <div class="form-group">
+              <label for="doubt-name">Your name *</label>
+              <input type="text" id="doubt-name" name="name" required placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label for="doubt-message">Your doubt *</label>
+              <textarea id="doubt-message" name="doubt" required placeholder="Describe your doubt in detail..."></textarea>
+            </div>
+            <button type="submit">Send doubt via email</button>
+            <div class="form-status" id="doubts-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-block">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          <a href="mailto:primefacultyalliance959@gmail.com" class="email-link">primefacultyalliance959@gmail.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        <a href="mailto:primefacultyalliance959@gmail.com">primefacultyalliance959@gmail.com</a>
+        &nbsp;·&nbsp; Prime Faculty Alliance · Elite Batch
+      </p>
+    </div>
+  </footer>
+
+  <!-- QR Modal -->
+  <div class="modal-backdrop" id="qr-modal" role="dialog" aria-modal="true" aria-labelledby="qr-title">
+    <div class="modal qr-section" role="document">
+      <button class="modal-close" type="button" aria-label="Close payment QR" id="close-qr">×</button>
+      <h2 id="qr-title">Pay here</h2>
+      <p>Scan to pay admission fee (₹299) and monthly fee (₹999) via Google Pay.</p>
+      <img src="https://i.ibb.co/ds9T8nMP/Google-Pay-QR.png" alt="Google Pay QR code for fee payment" width="220" height="220">
+      <p>After payment, please submit the registration form.</p>
+      <a class="btn primary" href="#registration" id="go-registration">Go to registration</a>
+    </div>
+  </div>
+
+  <script>
+    var TO_EMAIL = 'primefacultyalliance959@gmail.com';
+    var ENDPOINT = 'https://formsubmit.co/ajax/' + encodeURIComponent(TO_EMAIL);
+
+    function setStatus(el, type, msg) {
+      el.className = 'form-status' + (type ? ' ' + type : '');
+      el.textContent = msg || '';
+    }
+
+    async function sendForm(formEl, statusEl, successMsg) {
+      setStatus(statusEl, '', 'Sending…');
+
+      try {
+        var fd = new FormData(formEl);
+        // Reduce spam + keep consistent formatting
+        fd.append('_captcha', 'false');
+
+        var res = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: fd
+        });
+
+        if (!res.ok) throw new Error('Request failed: ' + res.status);
+        setStatus(statusEl, 'ok', successMsg);
+        formEl.reset();
+      } catch (err) {
+        setStatus(
+          statusEl,
+          'err',
+          'Could not send right now. Please WhatsApp/call or email: ' + TO_EMAIL
+        );
+      }
+    }
+
+    document.getElementById('registration-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      sendForm(
+        e.currentTarget,
+        document.getElementById('registration-status'),
+        'Registration sent successfully. We will contact you soon.'
+      );
+    });
+
+    document.getElementById('doubts-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      sendForm(
+        e.currentTarget,
+        document.getElementById('doubts-status'),
+        'Doubt sent successfully. You will receive a reply soon.'
+      );
+    });
+
+    // QR modal
+    var qrModal = document.getElementById('qr-modal');
+    var openQrBtn = document.getElementById('open-qr');
+    var closeQrBtn = document.getElementById('close-qr');
+    var goRegistrationBtn = document.getElementById('go-registration');
+
+    function openQrModal() {
+      qrModal.classList.add('open');
+      closeQrBtn.focus();
+    }
+
+    function closeQrModal() {
+      qrModal.classList.remove('open');
+      openQrBtn.focus();
+    }
+
+    openQrBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openQrModal();
+    });
+
+    closeQrBtn.addEventListener('click', function () {
+      closeQrModal();
+    });
+
+    goRegistrationBtn.addEventListener('click', function () {
+      closeQrModal();
+    });
+
+    qrModal.addEventListener('click', function (e) {
+      if (e.target === qrModal) closeQrModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && qrModal.classList.contains('open')) closeQrModal();
+    });
+  </script>
+</body>
+</html>
